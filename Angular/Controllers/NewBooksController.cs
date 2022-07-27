@@ -60,15 +60,16 @@ namespace Angular.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage BookInsert()
+        public HttpResponseMessage BookInsert(int Id = 0)
         {
-            //int BookId = id;
+            int BookId = Id;
             Books bookObj = new Books();
             BooksModel booksclassobj = new BooksModel();
             booksclassobj.categorieslist = bookObj.CategoriesGetList();
             booksclassobj.publisherslist = bookObj.PublishersGetList();
             bookObj.publisherslist = booksclassobj.publisherslist;
             bookObj.categorieslist = booksclassobj.categorieslist;
+            bookObj.BookId = BookId;
             bookObj.Load();
             booksclassobj.BookId = bookObj.BookId;
             booksclassobj.BookName = bookObj.BookName;
@@ -91,8 +92,6 @@ namespace Angular.Controllers
             bookObj.CategoryId = bookobj.CategoryId;
             bookObj.PublisherId = bookobj.PublisherId;
             bookObj.IsActive = bookobj.IsActive;
-            bookObj.publisherslist = booksclassobj.publisherslist;
-            bookObj.categorieslist = booksclassobj.categorieslist;
             bookObj.Save();
             return Request.CreateResponse(HttpStatusCode.Created,1);
         }

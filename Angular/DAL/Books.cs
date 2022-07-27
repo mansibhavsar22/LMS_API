@@ -76,10 +76,10 @@ namespace Angular.DAL
                         this.BookName = Convert.ToString(dt.Rows[0]["BookName"]);
                         this.BookQuantity = Convert.ToInt32(dt.Rows[0]["BookQuantity"]);
                         //this.BookDescription = Convert.ToString(dt.Rows[0]["BookDescription"]);
-                        //this.PublisherId = Convert.ToString(dt.Rows[0]["PublisherId"]);
+                        this.PublisherId = Convert.ToString(dt.Rows[0]["PublisherId"]);
                         //this.PublisherId = Convert.ToInt32(dt.Rows[0]["PublisherId"]);
                         this.PublisherName = Convert.ToString(dt.Rows[0]["PublisherName"]);
-                        //this.CategoryId = Convert.ToString(dt.Rows[0]["CategoryId"]);
+                        this.CategoryId = Convert.ToString(dt.Rows[0]["CategoryId"]);
                         //this.CategoryId = Convert.ToInt32(dt.Rows[0]["CategoryId"]);
                         this.CategoryName = Convert.ToString(dt.Rows[0]["CategoryName"]);
                         this.IsActive = Convert.ToBoolean(dt.Rows[0]["IsActive"]);

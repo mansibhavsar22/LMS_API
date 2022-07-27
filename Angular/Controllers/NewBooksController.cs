@@ -95,5 +95,14 @@ namespace Angular.Controllers
             bookObj.Save();
             return Request.CreateResponse(HttpStatusCode.Created,1);
         }
+
+        [HttpPost]
+        public HttpResponseMessage Delete(Books bookobj)
+        {
+            Books bookObj = new Books();
+            bookObj.BookId = bookobj.BookId;
+            bookObj.Delete();
+            return Request.CreateResponse(HttpStatusCode.Created, 1);
+        }
     }
 }

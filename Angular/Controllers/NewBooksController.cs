@@ -11,7 +11,7 @@ namespace Angular.Controllers
     {
 
         [HttpGet]
-        public HttpResponseMessage Books(int PageNumber)
+        public HttpResponseMessage Books()
         {
             Books bookObj = new Books();
             BooksModel booksclassobj = new BooksModel();
@@ -56,6 +56,7 @@ namespace Angular.Controllers
             booksclassobj.count = Convert.ToInt32(booksclassobj.bookslist[0].TotalRecords);
             booksclassobj.TotalPages = (int)Math.Ceiling((double)booksclassobj.count / bookObj.PageSize);
             booksclassobj.bookslist = bookObj.BooksGetList();
+            booksclassobj.PageSize = bookObj.PageSize;
             return Request.CreateResponse(HttpStatusCode.Created, booksclassobj);
         }
 

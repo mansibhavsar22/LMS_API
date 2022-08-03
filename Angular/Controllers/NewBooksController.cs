@@ -21,9 +21,13 @@ namespace Angular.Controllers
             booksclassobj.PublisherId = bookObj.PublisherId;
             booksclassobj.BookName = bookObj.BookName;
             booksclassobj.bookslist = bookObj.BooksGetList();
-            booksclassobj.TotalRecords = bookObj.TotalRecords;
             booksclassobj.PageSize = bookObj.PageSize;
             booksclassobj.PageNumber = bookObj.PageNumber;
+            booksclassobj.TotalRecords = bookObj.TotalRecords;
+            booksclassobj.count = Convert.ToInt32(booksclassobj.bookslist[0].TotalRecords);
+            booksclassobj.TotalPages = (int)Math.Ceiling((double)booksclassobj.count / bookObj.PageSize);
+            booksclassobj.bookslist = bookObj.BooksGetList();
+            booksclassobj.PageSize = bookObj.PageSize;
             return Request.CreateResponse(HttpStatusCode.Created, booksclassobj);
         }
 

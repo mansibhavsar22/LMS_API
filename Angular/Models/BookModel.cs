@@ -42,7 +42,7 @@ namespace Angular.Models
         public int TotalRecords { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 10;
-        public int TotalPages { get; set; }
+        public int TotalPages { get; set; } 
         public int count { get; set; }
         public int IssueId { get; set; }
         public DateTime IssueDate { get; set; }

@@ -193,7 +193,7 @@ namespace Angular.DAL
                 //    this.db.AddInParameter(com, "CategoryName", DbType.String, DBNull.Value);
                 //}
 
-                this.db.AddInParameter(com, "IsActive", DbType.Boolean, this.IsActive);
+                this.db.AddInParameter(com, "IsActive", DbType.Boolean, 1);
 
                 if (this.CreatedBy > 0)
                 {
